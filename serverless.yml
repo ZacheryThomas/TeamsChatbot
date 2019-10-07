@@ -1,0 +1,23 @@
+service: JoeyBot
+
+plugins:
+  - serverless-python-requirements
+
+provider:
+  name: aws
+  runtime: python3.7
+  environment:
+    BEARER: ''
+    MYID: ''
+
+functions:
+  hello:
+    handler: handler.bot_event
+    events:
+      - http:
+          method: post
+          path: message
+
+custom:
+  pythonRequirements:
+    dockerizePip: non-linux

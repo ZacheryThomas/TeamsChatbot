@@ -1,0 +1,2 @@
+requests>=2.22.0
+html2markdown>=0.1.7
